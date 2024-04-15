@@ -1,0 +1,76 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="./img/mainicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+    <title>Ball Bounce</title>
+</head>
+<div class="topnav" id="topNav">
+    <a href="../../">Home</a>
+    <a href="../">Projects</a>
+    <a href="../../slides/">Slides</a>
+    <a href="../../about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="modNav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<script>
+	function modNav(){
+		let x = document.getElementById("topNav");
+		if(x.className === "topnav")
+			x.className += " responsive";
+		else
+			x.className = "topnav";
+    }
+</script>
+<link rel="stylesheet" href="./style.css">
+<div id="ballMenu" class="ballMenu">
+	<h4>Ball menu</h4>
+	<div id="options">
+		<label for="radius">Radius</label><input type="range" id="radius" min="1" max="100" step="1">
+		<br>
+		<label for="mass">Mass</label><input type="range" id="mass" min="1" max="100" step="1">
+		<br>
+		<label for="damp">Damp</label><input type="range" id="damp" min="0" max="1" step="0.01">
+		<br>
+		<label for="traction">Traction</label><input type="range" id="traction" min="0" max="1" step="0.01">
+		<br>
+		<label for="thrust">Thrust</label><input type="range" id="thrust" min="0" max="2" step="0.1">
+		<br>
+		<label for="red">Red</label><input type="range" id="red" min="1" max="255" step="1">
+		<br>
+		<label for="green">Green</label><input type="range" id="green" min="1" max="255" step="1">
+		<br>
+		<label for="blue">Blue</label><input type="range" id="blue" min="1" max="255" step="1">
+		<button id="closeMenu">Close</button>
+	</div>
+	<p>Click and drag to move</p>
+</div>
+<div id="globalMenu" class="ballMenu gMenu">
+	<h4>Global menu</h4>
+	<div id="gOptions">
+	<label for="time">Time</label><input type="range" id="time" min="0" max="2" step="0.1">
+	<br>
+	<label for="gravity">Gravity</label><input type="range" id="gravity" min="0" max="10" step="0.1">
+	<br>
+	<label for="power">Shot Power</label><input type="range" id="power" min="0" max="1" step="0.01">
+	<button id="closeGMenu">Close</button>
+	</div>
+	<p>Click and drag to move</p>
+</div>
+<div class="homeContent">
+	<h1>Ball Toss</h1>	
+	<div class="gameContent">
+		<div class="gameScreen">
+			<canvas id="myCanvas" width="500" height="500"></canvas>
+		</div>
+	<h3>Controls</h3>
+	<p>Left click and hold to make the balls fly to it. Press and hold right click to shoot a new ball.<br>Middle click a ball to edit its properties or the canvas to edit global properties.</p>
+	</div>
+</div>
+
+<script src="./script.js" onload="init()"></script>
+<footer>
+	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+</footer>

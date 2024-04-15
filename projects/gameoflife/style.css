@@ -1,0 +1,16 @@
+canvas { 
+	background: #eee;
+	display: block;
+}
+body {
+	font-family: "Arial", sans-serif;
+}
+.sliders {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding: 5px;
+}
+.sliders p{
+	padding: 0px;
+}

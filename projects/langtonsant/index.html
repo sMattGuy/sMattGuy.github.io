@@ -1,0 +1,74 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="./img/mainicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+    <title>Langton's Ant</title>
+</head>
+<div class="topnav" id="topNav">
+    <a href="../../">Home</a>
+    <a href="../">Projects</a>
+    <a href="../../slides/">Slides</a>
+    <a href="../../about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="modNav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<script>
+	function modNav(){
+		let x = document.getElementById("topNav");
+		if(x.className === "topnav")
+			x.className += " responsive";
+		else
+			x.className = "topnav";
+    }
+</script>
+<link rel="stylesheet" href="./style.css">
+
+<div class="homeContent">
+	<h1>Langton's Ant</h1>
+	<div class="gameContent">
+		<div class="gameScreen">
+			<canvas id="myCanvas" width="500" height="500"></canvas>
+		</div>
+		<div class="gameControls">
+			<p>Options</p>
+			<div class="sliders">
+				<div>
+					<p>Start?</p>
+					<input type="checkbox" id="startGame" name="startGame" value="false">
+				</div>
+				<div>
+					<p>Clear?</p>
+					<button type="button" id="drawClear" name="drawClear">Yes.</button>
+				</div>
+				<div>
+					<p>Max Speed: <span id="speedDisplay"></span></p>
+					<input type="range" min="0" max="10" value="5" id="maxSpeed">
+					<p>Ants: <span id="antDisplay"></span></p>
+					<input type="range" min="1" max="100" value="1" id="maxAnts">
+				</div>
+			</div>
+			<p>Canvas Settings</p>
+			<div class="sliders">
+				<div>
+					<p>Canvas Width: <span id="widthDisplay"></span></p>
+					<input type="range" min="100" max="1600" value="500" id="maxWidth" step="10">
+					<p>Canvas Height: <span id="heightDisplay"></span></p>
+					<input type="range" min="100" max="900" value="500" id="maxHeight" step="10">
+				</div>
+				<div>
+					<p>Grid?</p>
+					<input type="checkbox" id="showGrid" name="showGrid" value="true" checked="true">
+					<p>Tile Size: <span id="tileDisplay"></span></p>
+					<input type="range" min="1" max="20" value="10" id="maxTile" step="1">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="./script.js" onload="init()"></script>
+<footer>
+	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+</footer>

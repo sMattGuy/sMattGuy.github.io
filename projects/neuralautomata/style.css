@@ -1,0 +1,29 @@
+canvas { 
+	background: #eee;
+	display: block;
+	margin: 0 auto;
+}
+.sliders {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+.inputs {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+.radios {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+.gameControls p{
+	margin: 0px;
+}

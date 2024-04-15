@@ -1,0 +1,36 @@
+canvas { 
+	background: #eee;
+	display: block;
+	margin: 0 auto;
+}
+.sliders {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+.windOption {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+.colorOption {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+.sliders p, input{
+	margin: 0px;
+	padding: 2px;
+}
+.windOption p, input{
+	margin: 0px;
+	padding: 2px;
+}
+.colorOption p, input{
+	margin: 0px;
+	padding: 2px;
+}

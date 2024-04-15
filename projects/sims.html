@@ -1,0 +1,104 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="./img/mainicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+    <title>Sims</title>
+</head>
+<div class="topnav" id="topNav">
+    <a href="../">Home</a>
+    <a href="./">Projects</a>
+    <a href="../slides/">Slides</a>
+    <a href="../about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="modNav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<script>
+	function modNav(){
+		let x = document.getElementById("topNav");
+		if(x.className === "topnav")
+			x.className += " responsive";
+		else
+			x.className = "topnav";
+    }
+</script>
+<div class="homeContent">
+	<h1>Simulation Games</h1>
+	<div class="homeText">	
+		<div>
+			<h3>Game of Life</h3>
+			<a href="./gameoflife/">Link to Game of Life</a>
+			<p>This is an implementation of John Conway's Game of Life. Nothing too crazy about it.</p>
+		</div>
+		<div class="homeSpace"></div>
+		<img src="/img/gameoflife.png" />
+	</div>
+	<div class="homeText">
+		<div>
+			<h3>Boids</h3>
+			<a href="./boids/">Link to Boids</a>
+			<p>Boids were my way of first testing the planes for my friend's simulation, since I wanted a way to see how planes could find each other and communicate to fly in formation. Eventually I developed this into a stand alone version, and began implementing several features into it.</p>
+		</div>
+		<div class="homeSpace"></div>
+		<img src="/img/boids.png" />
+	</div>
+	<div class="homeText">
+		<div>
+			<h3>Langton's Ant</h3>
+			<a href="./langtonsant/">Link to Langton's Ant</a>
+			<p>Langton's ant is an example of a "<a href="https://en.wikipedia.org/wiki/Turmite" style="padding:0px;display:inline;">turmite</a>" and was made after going down a rabbit hole of simple cellular automaton. It makes decisions based on the square its on.</p>
+		</div>
+		<div class="homeSpace"></div>
+		<img src="/img/ant.png" />
+	</div>
+	<div class="homeText">
+		<div>
+			<h3>Neural Cellular Automata</h3>
+			<a href="./neuralautomata/">Link to Cellular Automata</a>
+			<p>This is my implementation of the site <a href="https://neuralpatterns.io" style="padding:0px;display:inline;">neuralpatterns.io</a>. I wanted to understand better how it worked, and was able to figure it out. The performance is not very good, mainly because it uses pure Javascript.</p>
+		</div>
+			<div class="homeSpace"></div>
+			<img src="/img/neural.png" />
+	</div>
+	<div class="homeText">
+		<div>
+			<h3>Starfield Visualizer</h3>
+			<a href="./starfield/">Link to Starfield</a>
+			<p>While working on a simulation for gravity I got side tracked with other space simulations while researching orbits. I decided to make this simulation to practice more with trig functions, since those are common in 2D physics engines. The result was a Windows screen saver starfield. Up and Down arrow keys control the speed at which stars move.</p>
+		</div>
+			<div class="homeSpace"></div>
+			<img src="/img/stars.png" />
+	</div>
+	<div class="homeText">
+		<div>
+			<h3>Gravity Simulation</h3>
+			<a href="./gravity/">Link to Gravity Sim</a>
+			<p>Inspired by the <a href="https://dan-ball.jp/en/javagame/planet/" style="padding:0px;display:inline">Dan-Ball planet simulation</a>, I tried making my own. It was more for practice than anything, and there is still much to learn, but it can be improved on and used in other projects.</p>
+		</div>
+			<div class="homeSpace"></div>
+			<img src="/img/gravity.png" />
+	</div>
+	<div class="homeText">
+		<div>
+			<h3>Ball Toss</h3>
+			<a href="./ballBounce/">Link to Ball Toss</a>
+			<p>This simulation shows balls bouncing around with gravity pulling them down. It is a simple simulations that doesn't do much other than show how balls will react when colliding.</p>
+		</div>
+			<div class="homeSpace"></div>
+			<img src="/img/balltoss.png" />
+	</div>
+	<div class="homeText">
+		<div>
+			<h3>Fireflies</h3>
+			<a href="./fireflies/">Link to Fireflies</a>
+			<p>During the weekend I looked outside and noticed that fireflies had returned. I thought about how they light up based on others in the area and decided to try implementing it. Up and Down arrow keys will speed up and slow down time, while Left and Right arrow keys will spawn or despawn fireflies.</p>
+		</div>
+			<div class="homeSpace"></div>
+			<img src="/img/fireflies.png" />
+	</div>
+</div>
+<footer>
+	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+</footer>

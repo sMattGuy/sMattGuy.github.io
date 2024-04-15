@@ -1,0 +1,109 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="./img/mainicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+    <title>Boids</title>
+</head>
+<div class="topnav" id="topNav">
+    <a href="../../">Home</a>
+    <a href="../">Projects</a>
+    <a href="../../slides/">Slides</a>
+    <a href="../../about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="modNav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<script>
+	function modNav(){
+		let x = document.getElementById("topNav");
+		if(x.className === "topnav")
+			x.className += " responsive";
+		else
+			x.className = "topnav";
+    }
+</script>
+<link rel="stylesheet" href="./style.css">
+<div class="homeContent">
+	<h1>Boids</h1>
+	<div class="gameContent">
+		<div class="gameScreen">
+			<canvas id="myCanvas" width="500" height="500"></canvas>
+		</div>
+		<p>Boid Modifiers</p>
+		<div class="gameControls">
+			<div class="sliders">
+				<div>
+					<p>Max Speed: <span id="speedDisplay"></span></p>
+					<input type="range" min="0" max="100" value="10" id="maxSpeed">
+					<p>Sim Speed: <span id="simSpeedDisplay"></span></p>
+					<input type="range" min="0" max="10" value="2" id="simSpeed">
+					<p>Units: <span id="unitDisplay"></span></p>
+					<input type="range" min="0" max="500" value="100" id="maxUnits">
+					<p>Randomness: <span id="randomDisplay"></span></p>
+					<input type="range" min="0" max="100" value="1" id="maxRandom">
+				</div>
+				<div>
+					<p>Vision: <span id="visionDisplay"></span></p>
+					<input type="range" min="0" max="500" value="75" id="maxVision">
+					<p>Seperation: <span id="seperationDisplay"></span></p>
+					<input type="range" min="0" max="100" value="10" id="maxSeperation">
+					<p>Sep. Int.: <span id="sepIntDisplay"></span>%</p>
+					<input type="range" min="1" max="100" value="20" id="maxSepInt">
+				</div>
+				<div>
+					<p>Color Grouping?</p>
+					<input type="checkbox" id="colorBias" name="colorBias" value="false">
+					<p class="colorOption">Aversion: <span id="aversionDisplay"></span>%</p>
+					<input class="colorOption" type="range" min="1" max="100" value="10" id="maxAversion">
+					<!-- adversarial options -->
+					<p class="colorOption">Battle?</p>
+					<input class="colorOption" type="checkbox" id="battleToggle" name="battleToggle" value="false">
+				</div>
+			</div>
+			
+			<p>Area Modifiers</p>
+			<div class="sliders">
+				<div>
+					<p>Field Bounds: <span id="boundsDisplay"></span></p>
+					<input type="range" min="0" max="100" value="10" id="maxBounds">
+					<p>Target Location?</p>
+					<input type="checkbox" id="goToLocation" name="goToLocation" value="false">
+					<p>Wind?</p>
+					<input type="checkbox" id="windActivate" name="windActivate" value="false">
+				</div>
+				<div>
+					<p class="windOption">Wind Direction: <span id="windDisplay"></span></p>
+					<input class="windOption" type="range" min="0" max="360" value="0" id="maxWind">
+					<p class="windOption">Wind Intensity: <span id="windSpeedDisplay"></span></p>
+					<input class="windOption" type="range" min="0" max="50" value="0" id="maxWindSpeed">	
+				</div>
+			</div>
+			
+			<p>Canvas Settings</p>
+			<div class="sliders">
+				<p>Canvas Width: <span id="widthDisplay"></span></p>
+				<input type="range" min="100" max="1600" value="500" id="maxWidth">
+				<p>Canvas Height: <span id="heightDisplay"></span></p>
+				<input type="range" min="100" max="900" value="500" id="maxHeight">
+			</div>
+			
+			<p>View Settings</p>
+			<div class="sliders">
+				<p>View Sphere?</p>
+				<input type="checkbox" id="viewSphere" name="viewSphere" value="true" checked>
+				<p>Separation Sphere?</p>
+				<input type="checkbox" id="sepSphere" name="sepSphere" value="true" checked>
+				<p>Vel. Line?</p>
+				<input type="checkbox" id="velLine" name="velLine" value="true" checked>
+				<p>Boarder view?</p>
+				<input type="checkbox" id="boarder" name="boarder" value="true" checked>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="./script.js" onload="init()"></script>
+<footer>
+	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+</footer>

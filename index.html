@@ -1,0 +1,37 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="./img/mainicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+    <title>Matt's Portfolio</title>
+</head>
+<div class="topnav" id="topNav">
+    <a href="./">Home</a>
+    <a href="./projects">Projects</a>
+    <a href="./slides">Slides</a>
+    <a href="./about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="modNav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<script>
+	function modNav(){
+		let x = document.getElementById("topNav");
+		if(x.className === "topnav")
+			x.className += " responsive";
+		else
+			x.className = "topnav";
+    }
+</script>
+<div class="homeContent">
+    <h1>Welcome to Matt's Portfolio</h1>
+    <div class="homeText">
+        <div>
+            <p>On here you will find information about me, Matthew Flammia, along with my projects that I have worked on through high school to present. On the "About" page you can find more information and how to contact me. To see my projects, you can see the "Projects" page. To see powerpoint slides I have made, see the "Slides" page.</p>
+        </div>
+    </div>
+</div>
+<footer>
+	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+</footer>

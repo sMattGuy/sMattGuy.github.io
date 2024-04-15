@@ -1,0 +1,61 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="./img/mainicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+    <title>Minesweeper</title>
+</head>
+<div class="topnav" id="topNav">
+    <a href="../../">Home</a>
+    <a href="../">Projects</a>
+    <a href="../../slides/">Slides</a>
+    <a href="../../about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="modNav()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<script>
+	function modNav(){
+		let x = document.getElementById("topNav");
+		if(x.className === "topnav")
+			x.className += " responsive";
+		else
+			x.className = "topnav";
+    }
+</script>
+<div class="homeContent">
+	<h1>Minesweeper</h1>
+	<div class="gameContent">
+		<div class="gameScreen">
+			<div class="mineBoard" style="display: flex; flex-direction: column; padding: 10px; padding-top: 10px;">
+				<canvas id="topZone" width="500" height="30" oncontextmenu="return false;"></canvas>
+				<canvas id="myCanvas" width="500" height="500" oncontextmenu="return false;"></canvas>
+			</div>
+		</div>
+		<h3 style="text-align: center;">Difficulty</h3>
+		<div class="gameControls">
+			<div style="padding:5px;">
+				<button type="button" id="easy" name="easy">easy</button>
+				<button type="button" id="normal" name="normal">normal</button>
+				<button type="button" id="hard" name="hard">hard</button>
+				<button type="button" id="custom" name="custom">custom</button>
+			</div>
+			<div id="customInput" style="display: none;">
+				<div style="display: flex; flex-direction: column;">
+					<input type="text" id="cusHeight" placeholder="height">
+					<input type="text" id="cusWidth" placeholder="width">
+					<input type="text" id="cusBomb" placeholder="bombs">
+				</div>
+			</div>
+			<div style="padding: 5px;">
+				<button type="button" id="createCustom" name="startCustom" style="margin-bottom: 5px;">Start!</button>
+				<button type="button" id="reset" name="reset" style="margin-bottom: 5px;">restart</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="./script.js"></script>
+<footer>
+	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+</footer>

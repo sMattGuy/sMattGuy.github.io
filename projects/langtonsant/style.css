@@ -1,0 +1,17 @@
+canvas { 
+	background: #eee;
+	display: block;
+	margin: 0 auto;
+}
+.sliders {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	padding: 5px;
+}
+.sliders p, input{
+	margin: 0px;
+	padding: 2px;
+}

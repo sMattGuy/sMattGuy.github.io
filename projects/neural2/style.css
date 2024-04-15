@@ -1,0 +1,25 @@
+#act_text_holder{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#activation_text{
+    font-size: 32px;
+    background: black;
+    color: white;
+    padding:3px;
+    opacity: 0%;
+}
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
