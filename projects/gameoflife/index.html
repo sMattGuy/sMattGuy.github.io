@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,57 +8,60 @@
 	<link rel="stylesheet" href="../../css/style.css">
     <title>Game of Life</title>
 </head>
-<div class="topnav" id="topNav">
-    <a href="../../">Home</a>
-    <a href="../">Projects</a>
-    <a href="../../slides/">Slides</a>
-    <a href="../../about.html">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="modNav()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-<script>
-	function modNav(){
-		let x = document.getElementById("topNav");
-		if(x.className === "topnav")
-			x.className += " responsive";
-		else
-			x.className = "topnav";
-    }
-</script>
-<link rel="stylesheet" href="./style.css">
-<div class="homeContent">
-	<h1>Game of Life</h1>
-	<div class="gameContent">
-		<div class="gameScreen">
-			<canvas id="myCanvas" width="500" height="500"></canvas>
-		</div>
-		<div class="gameControls">
-			<p>Options</p>
-			<div class="sliders">
-				<p>Start? </p>
-				<input type="checkbox" id="startGame" name="startGame" value="false">
-				<p>Clear? </p>
-				<button type="button" id="drawClear" name="drawClear">Yes.</button>
-				<p>Max Speed: <span id="speedDisplay"></span></p>
-				<input type="range" min="0" max="100" value="10" id="maxSpeed">
+<body>
+	<div class="topnav" id="topNav">
+		<a href="../../">Home</a>
+		<a href="../">Projects</a>
+		<a href="../../slides/">Slides</a>
+		<a href="../../about.html">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="modNav()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<script>
+		function modNav(){
+			let x = document.getElementById("topNav");
+			if(x.className === "topnav")
+				x.className += " responsive";
+			else
+				x.className = "topnav";
+		}
+	</script>
+	<link rel="stylesheet" href="./style.css">
+	<div class="homeContent">
+		<h1>Game of Life</h1>
+		<div class="gameContent">
+			<div class="gameScreen">
+				<canvas id="myCanvas" width="500" height="500"></canvas>
 			</div>
-			<p style="margin-bottom: 0px;">Canvas Settings</p>
-			<div class="sliders">
-				<div>
-					<p style="margin-bottom: 0px;">Canvas Width: <span id="widthDisplay"></span></p>
-					<input type="range" min="100" max="1600" value="500" id="maxWidth" step="10">
+			<div class="gameControls">
+				<p>Options</p>
+				<div class="sliders">
+					<p>Start? </p>
+					<input type="checkbox" id="startGame" name="startGame" value="false">
+					<p>Clear? </p>
+					<button type="button" id="drawClear" name="drawClear">Yes.</button>
+					<p>Max Speed: <span id="speedDisplay"></span></p>
+					<input type="range" min="0" max="100" value="10" id="maxSpeed">
 				</div>
-				<div>
-					<p style="margin-bottom: 0px;">Canvas Height: <span id="heightDisplay"></span></p>
-					<input type="range" min="100" max="900" value="500" id="maxHeight" step="10">
+				<p style="margin-bottom: 0px;">Canvas Settings</p>
+				<div class="sliders">
+					<div>
+						<p style="margin-bottom: 0px;">Canvas Width: <span id="widthDisplay"></span></p>
+						<input type="range" min="100" max="1600" value="500" id="maxWidth" step="10">
+					</div>
+					<div>
+						<p style="margin-bottom: 0px;">Canvas Height: <span id="heightDisplay"></span></p>
+						<input type="range" min="100" max="900" value="500" id="maxHeight" step="10">
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<script src="./script.js" onload="init()"></script>
-<footer>
-	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
-</footer>
+	<script src="./script.js" onload="init()"></script>
+	<footer>
+		<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+	</footer>
+</body>
+</html>

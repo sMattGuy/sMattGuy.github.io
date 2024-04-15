@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,67 +8,70 @@
 	<link rel="stylesheet" href="../css/style.css">
     <title>Slides</title>
 </head>
-<div class="topnav" id="topNav">
-    <a href="../">Home</a>
-    <a href="../projects">Projects</a>
-    <a href="./">Slides</a>
-    <a href="../about.html">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="modNav()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-<script>
-	function modNav(){
-		let x = document.getElementById("topNav");
-		if(x.className === "topnav")
-			x.className += " responsive";
-		else
-			x.className = "topnav";
-    }
-</script>
-<div class="homeContent">
-    <h1>Slides</h1>
-    <div class="homeText">
-        <div>
-            <h3>My Slide Presentations</h3>
-            <p>Here you can find my slides that I have made over the years. Most of them are for school, either for a project or to help study. Some of them are also tutorials and explinations to help my friends when they were lost during CS. Feel free to use these to study and share freely.</p>
-        </div>
+<body>
+    <div class="topnav" id="topNav">
+        <a href="../">Home</a>
+        <a href="../projects">Projects</a>
+        <a href="./">Slides</a>
+        <a href="../about.html">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="modNav()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
-    <div class="homeText">
-        <div>
-            <h3>Java Tutorial</h3>
-            <p>Here is a tutorial for Java that I had made for one of my friends. It is a very basic intro into programming and contains information on how to get started with Java.</p>
-            <div style="margin-bottom: 16px">
-                <a href="./java1.pdf">Java Tutorial Part 1</a>
-                <a href="./java2.pdf">Java Tutorial Part 2</a>
-                <a href="./java3.pdf">Java Tutorial Part 3</a>
-                <a href="./java4.pdf">Java Tutorial Part 4</a>
+    <script>
+        function modNav(){
+            let x = document.getElementById("topNav");
+            if(x.className === "topnav")
+                x.className += " responsive";
+            else
+                x.className = "topnav";
+        }
+    </script>
+    <div class="homeContent">
+        <h1>Slides</h1>
+        <div class="homeText">
+            <div>
+                <h3>My Slide Presentations</h3>
+                <p>Here you can find my slides that I have made over the years. Most of them are for school, either for a project or to help study. Some of them are also tutorials and explinations to help my friends when they were lost during CS. Feel free to use these to study and share freely.</p>
             </div>
+        </div>
+        <div class="homeText">
+            <div>
+                <h3>Java Tutorial</h3>
+                <p>Here is a tutorial for Java that I had made for one of my friends. It is a very basic intro into programming and contains information on how to get started with Java.</p>
+                <div style="margin-bottom: 16px">
+                    <a href="./java1.pdf">Java Tutorial Part 1</a>
+                    <a href="./java2.pdf">Java Tutorial Part 2</a>
+                    <a href="./java3.pdf">Java Tutorial Part 3</a>
+                    <a href="./java4.pdf">Java Tutorial Part 4</a>
+                </div>
 
+            </div>
         </div>
-    </div>
-    <div class="homeText">
-        <div>
-            <h3>For School</h3>
-            <p>Here are slides that I had done for school. Mainly just class projects for programs that might be in the gitweb.</p>
-            <div style="margin-bottom: 16px">	
-                <a href="./genalgos.pdf">Parameterless Genetic Algorithms</a>
-                <a href="./bloom.pdf">Bloom Filters in Distributed Systems</a>
+        <div class="homeText">
+            <div>
+                <h3>For School</h3>
+                <p>Here are slides that I had done for school. Mainly just class projects for programs that might be in the gitweb.</p>
+                <div style="margin-bottom: 16px">	
+                    <a href="./genalgos.pdf">Parameterless Genetic Algorithms</a>
+                    <a href="./bloom.pdf">Bloom Filters in Distributed Systems</a>
+                </div>
+            </div>
+        </div>
+        <div class="homeText">
+            <div>
+                <h3>General Programming</h3>
+                <p>These are tutorials I have made for friends on general aspects of computer programming. They contain useful information for studying.</p>
+                <div style="margin-bottom: 16px;">
+                    <a href="./cppalgos.pdf">C++ Algorithms and Data Structures</a>
+                    <a href="./functions.pdf">Quick Guide to C++ Functions</a>
+                    <a href="./introtopro.pdf">Intro to Programming</a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="homeText">
-        <div>
-            <h3>General Programming</h3>
-            <p>These are tutorials I have made for friends on general aspects of computer programming. They contain useful information for studying.</p>
-            <div style="margin-bottom: 16px;">
-                <a href="./cppalgos.pdf">C++ Algorithms and Data Structures</a>
-                <a href="./functions.pdf">Quick Guide to C++ Functions</a>
-                <a href="./introtopro.pdf">Intro to Programming</a>
-            </div>
-        </div>
-    </div>
-</div>
-<footer>
-	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
-</footer>
+    <footer>
+        <p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+    </footer>
+</body>
+</html>

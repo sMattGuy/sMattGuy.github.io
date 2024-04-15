@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,54 +8,57 @@
 	<link rel="stylesheet" href="../css/style.css">
     <title>Games</title>
 </head>
-<div class="topnav" id="topNav">
-    <a href="../">Home</a>
-    <a href="./">Projects</a>
-    <a href="../slides/">Slides</a>
-    <a href="../about.html">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="modNav()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-<script>
-	function modNav(){
-		let x = document.getElementById("topNav");
-		if(x.className === "topnav")
-			x.className += " responsive";
-		else
-			x.className = "topnav";
-    }
-</script>
-<div class="homeContent">
-	<h1>Games</h1>
-	<div class="homeText">
-		<div>
-			<h3>Tic Tac Toe</h3>
-			<a href="./tictactoe">Link to Tic Tac Toe</a>
-			<p>Tic Tac Toe was my first Javascript game, it was useful for learning about how CSS can be used to interact with the webpage, and how Javascript can then fill in other elements based on user input.</p>
-		</div>
-		<div class="homeSpace"></div>
-		<img src="/img/tictactoe.png" />
+<body>
+	<div class="topnav" id="topNav">
+		<a href="../">Home</a>
+		<a href="./">Projects</a>
+		<a href="../slides/">Slides</a>
+		<a href="../about.html">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="modNav()">
+			<i class="fa fa-bars"></i>
+		</a>
 	</div>
-	<div class="homeText">
-		<div>
-			<h3>Minesweeper</h3>
-			<a href="./minesweeper">Link to Minesweeper</a>
-			<p>Number games like minesweeper have always been my favorite pastime. I wanted to create my own version as to practice a bit of game development, and to see how the features of modern minesweeper are implemented.</p>
+	<script>
+		function modNav(){
+			let x = document.getElementById("topNav");
+			if(x.className === "topnav")
+				x.className += " responsive";
+			else
+				x.className = "topnav";
+		}
+	</script>
+	<div class="homeContent">
+		<h1>Games</h1>
+		<div class="homeText">
+			<div>
+				<h3>Tic Tac Toe</h3>
+				<a href="./tictactoe">Link to Tic Tac Toe</a>
+				<p>Tic Tac Toe was my first Javascript game, it was useful for learning about how CSS can be used to interact with the webpage, and how Javascript can then fill in other elements based on user input.</p>
+			</div>
+			<div class="homeSpace"></div>
+			<img src="/img/tictactoe.png" />
 		</div>
-		<div class="homeSpace"></div>
-		<img src="/img/minesweeper.png" />
-	</div>
-	<div class="homeText">
-		<div>
-			<h3>PICO8 Dijkstra</h3>
-			<a href="./picodijkstra">Link to PICO8 Dijkstra</a>
-			<p>The PICO8 is a fantastic fantasy console that you can use to create games or demos in a very restricted environment. Although it is quite limited, there are a lot of tools within the actual software that make some things much easier, such as sprite creation, music and sound, player input, etc. You can find out more about it <a href="https://www.lexaloffle.com/pico-8.php" style="padding:0px;display:inline;">here on their site</a></p>
+		<div class="homeText">
+			<div>
+				<h3>Minesweeper</h3>
+				<a href="./minesweeper">Link to Minesweeper</a>
+				<p>Number games like minesweeper have always been my favorite pastime. I wanted to create my own version as to practice a bit of game development, and to see how the features of modern minesweeper are implemented.</p>
+			</div>
+			<div class="homeSpace"></div>
+			<img src="/img/minesweeper.png" />
 		</div>
-		<div class="homeSpace"></div>
-		<img src="/img/dijkstra.p8.png" />
+		<div class="homeText">
+			<div>
+				<h3>PICO8 Dijkstra</h3>
+				<a href="./picodijkstra">Link to PICO8 Dijkstra</a>
+				<p>The PICO8 is a fantastic fantasy console that you can use to create games or demos in a very restricted environment. Although it is quite limited, there are a lot of tools within the actual software that make some things much easier, such as sprite creation, music and sound, player input, etc. You can find out more about it <a href="https://www.lexaloffle.com/pico-8.php" style="padding:0px;display:inline;">here on their site</a></p>
+			</div>
+			<div class="homeSpace"></div>
+			<img src="/img/dijkstra.p8.png" />
+		</div>
 	</div>
-</div>
-<footer>
-	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
-</footer>
+	<footer>
+		<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+	</footer>
+</body>
+</html>

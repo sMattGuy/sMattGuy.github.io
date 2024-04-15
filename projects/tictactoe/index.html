@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,44 +8,47 @@
 	<link rel="stylesheet" href="../../css/style.css">
     <title>Tic Tac Toe</title>
 </head>
-<div class="topnav" id="topNav">
-    <a href="../../">Home</a>
-    <a href="../">Projects</a>
-    <a href="../../slides/">Slides</a>
-    <a href="../../about.html">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="modNav()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-<script>
-	function modNav(){
-		let x = document.getElementById("topNav");
-		if(x.className === "topnav")
-			x.className += " responsive";
-		else
-			x.className = "topnav";
-    }
-</script>
-<link rel="stylesheet" href="./style.css">
-<div class="homeContent">
-    <h1>Tic Tac Toe</h1>
-    <div class=gameContent style="margin: 0%; padding-left: 30px; padding-right: 30px;">
-        <div class="game--container" style="margin-bottom: 5px;">
-            <div id="0" data-cell-index="0" class="cell"></div>
-            <div id="1" data-cell-index="1" class="cell"></div>
-            <div id="2" data-cell-index="2" class="cell"></div>
-            <div id="3" data-cell-index="3" class="cell"></div>
-            <div id="4" data-cell-index="4" class="cell"></div>
-            <div id="5" data-cell-index="5" class="cell"></div>
-            <div id="6" data-cell-index="6" class="cell"></div>
-            <div id="7" data-cell-index="7" class="cell"></div>
-            <div id="8" data-cell-index="8" class="cell"></div>
-        </div>
-        <h2 class="game--status" style="margin-top: 0px;"></h2>
-        <button class="game--restart">Restart Game</button>
+<body>
+    <div class="topnav" id="topNav">
+        <a href="../../">Home</a>
+        <a href="../">Projects</a>
+        <a href="../../slides/">Slides</a>
+        <a href="../../about.html">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="modNav()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
-</div>
-<script src="./game.js"></script>
-<footer>
-	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
-</footer>
+    <script>
+        function modNav(){
+            let x = document.getElementById("topNav");
+            if(x.className === "topnav")
+                x.className += " responsive";
+            else
+                x.className = "topnav";
+        }
+    </script>
+    <link rel="stylesheet" href="./style.css">
+    <div class="homeContent">
+        <h1>Tic Tac Toe</h1>
+        <div class=gameContent style="margin: 0%; padding-left: 30px; padding-right: 30px;">
+            <div class="game--container" style="margin-bottom: 5px;">
+                <div id="0" data-cell-index="0" class="cell"></div>
+                <div id="1" data-cell-index="1" class="cell"></div>
+                <div id="2" data-cell-index="2" class="cell"></div>
+                <div id="3" data-cell-index="3" class="cell"></div>
+                <div id="4" data-cell-index="4" class="cell"></div>
+                <div id="5" data-cell-index="5" class="cell"></div>
+                <div id="6" data-cell-index="6" class="cell"></div>
+                <div id="7" data-cell-index="7" class="cell"></div>
+                <div id="8" data-cell-index="8" class="cell"></div>
+            </div>
+            <h2 class="game--status" style="margin-top: 0px;"></h2>
+            <button class="game--restart">Restart Game</button>
+        </div>
+    </div>
+    <script src="./game.js"></script>
+    <footer>
+        <p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+    </footer>
+</body>
+</html>

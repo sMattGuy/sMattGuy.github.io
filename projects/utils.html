@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,36 +8,39 @@
 	<link rel="stylesheet" href="../css/style.css">
     <title>Utils</title>
 </head>
-<div class="topnav" id="topNav">
-    <a href="../">Home</a>
-    <a href="./">Projects</a>
-    <a href="../slides/">Slides</a>
-    <a href="../about.html">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="modNav()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-<script>
-	function modNav(){
-		let x = document.getElementById("topNav");
-		if(x.className === "topnav")
-			x.className += " responsive";
-		else
-			x.className = "topnav";
-    }
-</script>
-<div class="homeContent">
-	<h1>Utility Programs</h1>
-	<div class="homeText">
-		<div>
-			<h3>Image Modifier</h3>
-			<a href="./imageModifier/">Link to Image Editor</a>
-			<p>This image modifier does a number of basic functions to any image the user uploads. The main point of this was to practice with image quantization and dithering. The functions available are thresholding, quantizing with color and grey scale and dithering with color and greyscale.</p>
-		</div>
-		<div class="homeSpace"></div>
-		<img src="/img/imgmod.png" />
+<body>
+	<div class="topnav" id="topNav">
+		<a href="../">Home</a>
+		<a href="./">Projects</a>
+		<a href="../slides/">Slides</a>
+		<a href="../about.html">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="modNav()">
+			<i class="fa fa-bars"></i>
+		</a>
 	</div>
-</div>
-<footer>
-	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
-</footer>
+	<script>
+		function modNav(){
+			let x = document.getElementById("topNav");
+			if(x.className === "topnav")
+				x.className += " responsive";
+			else
+				x.className = "topnav";
+		}
+	</script>
+	<div class="homeContent">
+		<h1>Utility Programs</h1>
+		<div class="homeText">
+			<div>
+				<h3>Image Modifier</h3>
+				<a href="./imageModifier/">Link to Image Editor</a>
+				<p>This image modifier does a number of basic functions to any image the user uploads. The main point of this was to practice with image quantization and dithering. The functions available are thresholding, quantizing with color and grey scale and dithering with color and greyscale.</p>
+			</div>
+			<div class="homeSpace"></div>
+			<img src="/img/imgmod.png" />
+		</div>
+	</div>
+	<footer>
+		<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+	</footer>
+</body>
+</html>

@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -6,34 +8,37 @@
 	<link rel="stylesheet" href="../../css/style.css">
     <title>Gravity</title>
 </head>
-<div class="topnav" id="topNav">
-    <a href="../../">Home</a>
-    <a href="../">Projects</a>
-    <a href="../../slides/">Slides</a>
-    <a href="../../about.html">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="modNav()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
-<script>
-	function modNav(){
-		let x = document.getElementById("topNav");
-		if(x.className === "topnav")
-			x.className += " responsive";
-		else
-			x.className = "topnav";
-    }
-</script>
-<div class="homeContent">
-	<h1>Gravity Simulation</h1>
-	<div class="gameContent">
-		<div class="gameScreen">
-			<canvas id="myCanvas" width="500" height="600"></canvas>
+<body>
+	<div class="topnav" id="topNav">
+		<a href="../../">Home</a>
+		<a href="../">Projects</a>
+		<a href="../../slides/">Slides</a>
+		<a href="../../about.html">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="modNav()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<script>
+		function modNav(){
+			let x = document.getElementById("topNav");
+			if(x.className === "topnav")
+				x.className += " responsive";
+			else
+				x.className = "topnav";
+		}
+	</script>
+	<div class="homeContent">
+		<h1>Gravity Simulation</h1>
+		<div class="gameContent">
+			<div class="gameScreen">
+				<canvas id="myCanvas" width="500" height="600"></canvas>
+			</div>
 		</div>
 	</div>
-</div>
 
-<script src="./script.js" onload="init()"></script>
-<footer>
-	<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
-</footer>
+	<script src="./script.js" onload="init()"></script>
+	<footer>
+		<p>Matthew Flammia<br><a href="mailto:matthewflammia@aol.com">matthewflammia@aol.com</a></p>
+	</footer>
+</body>
+</html>
