@@ -5,45 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" href="../../img/mainicon.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../../css/style.css">
-    <title>Maid Ukagaka</title>
+	<link rel="stylesheet" href="./style.css">
+   <title>Maid Ukagaka</title>
 </head>
 <body>
-	<div class="topnav" id="topNav">
-		<a href="../../">Home</a>
-		<a href="../">Projects</a>
-		<a href="../../slides/">Slides</a>
-		<a href="../../about.html">About</a>
-		<a href="javascript:void(0);" class="icon" onclick="modNav()">
-			<i class="fa fa-bars"></i>
-		</a>
+	<div class="headingContainer">
+		<img style="width: 25%" src="./img/glasses.gif" alt="Glasses Maid">
+		<div>
+			<h1>Maid Ukagaka</h1>
+			<h2>A Lovely Maid For Your PC!</h2>
+		</div>
+		<img style="width: 25%" src="./img/glasses.gif" alt="Glasses Maid">
 	</div>
-	<script>
-		function modNav(){
-			let x = document.getElementById("topNav");
-			if(x.className === "topnav")
-				x.className += " responsive";
-			else
-				x.className = "topnav";
-		}
-	</script>
-	<div class="homeContent">
-		<h1>Maid Ukagaka</h1>
-		<div class="gameContent">
-			<div class="gameControls" style="margin-left: 10px;margin-right:10px">
-				<h2>A Lovely Maid For Your PC!</h2>
-					<img style="border:2px solid;max-width:100%" src="/img/maidukatb.png" alt="Maid Ukagaka"></img>
-				<a href="./mikufanclubmaid/mikufanclubmaid.zip">Click Here To Download!</a>
-				<p style="text-align:center">Everyone wants a cute maid on their computer, so why not download her!<br>She talks, she cleans your PC, she can even check E-mail!<br>Does your wallpaper need a little dusting? Or someone to remind you what time it is? She can do all that too!<br>A lovely little maid right on your PC!</p>
+	<div class="mainHolder">
+		<img src="/img/maidukatb.png" alt="Maid Ukagaka"></img>
+		<div style="display: flex; flex-direction: column;">
+			<div class="textContainer">
+				<p><a href="./mikufanclubmaid/mikufanclubmaid.zip">Click Here To Download!</a></p>
+				<p>Everyone wants a cute maid on their computer, so why not download her!</p>
+				<p>She talks, she cleans your PC, she can even check E-mail! Does your wallpaper need a little dusting? Or someone to remind you what time it is? She can do all that too! A lovely little maid right on your PC!</p>
+			</div>
+			<div class="textContainer">
 				<h3>How do I install this Maid?</h3>
-				<p style="text-align:center">Installation requires you to have <a href="https://ssp.shillest.net/">The Ukagaka program SSP installed</a></p>
-				<p style="text-align:center">After that, download the maid from above.<br>After opening SSP, drag and drop the ZIP files you just downloaded on to<br>the program (It will most likely be the default ghost, Emily).</p>
-				<p style="text-align:center">Once she's installed she will ask you some questions to get started.<br>After that you are free to enjoy your new PC maid!</p>
+				<p>Installation requires you to have <a href="https://ssp.shillest.net/">The Ukagaka program SSP installed</a></p>
+				<p>After that, download the maid from above. After opening SSP, drag and drop the ZIP files you just downloaded on to the program (It will most likely be the default ghost, Emily).</p>
+				<p>Once she's installed she will ask you some questions to get started. After that you are free to enjoy your new PC maid!</p>
 			</div>
 		</div>
 	</div>
-	<footer>
-		<p>Matthew Flammia<br><a href="mailto:matthewfrankflammia@gmail.com">matthewfrankflammia@gmail.com</a></p>
-	</footer>
+	<div class="maidHolder">
+		<img src="./img/angry.png" alt="Angry Maid"></img>
+		<img src="./img/phone.png" alt="Phone Maid"></img>
+		<img src="./img/dust.png" alt="Dust Maid"></img>
+		<img src="./img/smile.png" alt="Happy Maid"></img>
+	</div>
 </body>
 </html>
