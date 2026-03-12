@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="../img/mainicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+    <title>Games</title>
+</head>
+<body>
+	<div class="topnav" id="topNav">
+		<a href="../">Home</a>
+		<a href="./">Projects</a>
+		<a href="../slides/">Slides</a>
+		<a href="../about.html">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="modNav()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<script>
+		function modNav(){
+			let x = document.getElementById("topNav");
+			if(x.className === "topnav")
+				x.className += " responsive";
+			else
+				x.className = "topnav";
+		}
+	</script>
+	<div class="homeContent">
+		<h1>Games</h1>
+		<div class="homeText">
+			<div>
+				<h3>Maid</h3>
+				<a href="./maidukagaka">Link to Maid Ukagaka</a>
+				<p>My friend <a href="https://mikufanclub.tumblr.com/" style="padding:0px;display:inline;">Susu</a>, who you may know from <a href="./maid2fish" style="padding:0px;display:inline;">Maid 2 Fish</a> and I created this Ukagaka together. She is quite cute and I highly recommend you put her on your PC now.</p>
+			</div>
+			<div class="homeSpace"></div>
+			<img src="/img/maidukatb.png" />
+		</div>
+	</div>
+	<footer>
+		<p>Matthew Flammia<br><a href="mailto:matthewfrankflammia@gmail.com">matthewfrankflammia@gmail.com</a></p>
+	</footer>
+</body>
+</html>
