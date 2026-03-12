@@ -68,6 +68,11 @@ img {
 	background-color: rgba(210,210,210,.8);
 }
 
+.mainHolder img {
+	max-height: 577px;
+	max-width: 500px;
+}
+
 .maidHolder {
 	display: flex;
 	align-items: center;
@@ -76,7 +81,7 @@ img {
 	background-color: rgba(210,210,210,.8);
 }
 
-.maidHolder img,gif{
+.maidHolder img{
 	flex: 0 1 50%;
 }
 @media (max-width: 600px){
