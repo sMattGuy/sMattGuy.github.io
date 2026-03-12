@@ -76,15 +76,14 @@ img {
 	background-color: rgba(210,210,210,.8);
 }
 
-.maidHolder img{
-	flex: 50%;
+.maidHolder img,gif{
+	flex: 0 1 50%;
 }
 @media (max-width: 600px){
 	.mainHolder {
 		flex-direction: column;
 	}
 	.maidHolder {
-		flex: 1 0 40%;
 		flex-wrap: wrap;
 	}
 	.headingContainer img{
