@@ -2,7 +2,10 @@
 	font-family: lover;
 	src: url('./font/SpareLover.otf')
 }
-
+@font-face {
+	font-family: cyber;
+	src: url('./font/cyber-angel.ttf')
+}
 body {
 	background-image: url('./img/bg.webp');
 	background-size: 25% 25%;
@@ -20,7 +23,7 @@ body {
 h1 {
 	text-align: center;
 	margin: 0;
-	font-family: lover;
+	font-family: cyber;
 }
 
 h2 {
@@ -55,9 +58,14 @@ img {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	align-content: center;
 	border: solid 5px;
 	border-color: rgba(180,180,180,1);
 	background-color: rgba(210,210,210,.8);
+}
+
+.headingContainer img {
+	max-width: 200px;
 }
 
 .mainHolder {
@@ -84,14 +92,17 @@ img {
 .maidHolder img{
 	flex: 0 1 50%;
 }
-@media (max-width: 600px){
+@media screen and (max-width: 600px){
 	.mainHolder {
 		flex-direction: column;
 	}
 	.maidHolder {
-		flex-wrap: wrap;
+		display: none;
 	}
 	.headingContainer img{
+		display: none;
+	}
+	#extramaid {
 		display: none;
 	}
 }
