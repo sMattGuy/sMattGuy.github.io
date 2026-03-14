@@ -26,6 +26,8 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[0]Sweep sweep sweep...\e"
 	
+	"\0\s[6]La\w2 la\w2 lala\w2 la.\e"
+	
 	"\0\s[0]I've finished sweeping those dishes, %(username)%(SlowDots)\w8 You're welcome.\e"
 	
 	"\0\s[0]I'm only two dishes tall...\e"

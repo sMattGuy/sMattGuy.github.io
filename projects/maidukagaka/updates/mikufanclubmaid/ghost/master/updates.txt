@@ -2,7 +2,7 @@ charset,OSNative
 file,install.txt59a295afc3706612dad0ee69f59fba91size=931date=2026-03-11T20:08:28
 file,readme.txt9debc2f365e333af4603a824c651b276size=418date=2026-03-11T20:12:31
 file,thumbnail.png9e4dad6c46df940f02abe99c63b4e181size=56463date=2026-03-10T20:13:11
-file,ghost/master/aitalk.dic3564abb324fcb22d40ac51ac8ef80f72size=3727date=2026-03-13T22:15:22
+file,ghost/master/aitalk.dic3aa84458d858c525ca760647144f9689size=3767date=2026-03-13T23:54:44
 file,ghost/master/anchor.diccd4d4732d1d0858e0280e47acf93de1fsize=1370date=2026-03-07T01:09:51
 file,ghost/master/bootend.diccc572ae332cd5d063d4589f68a9e9485size=7551date=2026-03-13T23:36:37
 file,ghost/master/calendar.dic231b149be7e510e488e54c6adfb1193csize=662date=2026-03-09T18:38:14
