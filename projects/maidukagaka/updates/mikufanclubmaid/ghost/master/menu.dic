@@ -1,0 +1,457 @@
+﻿//---------------------------Menus--------------------------
+//This .dic file is primarily concerned with the double-click menus for each of your ghosts.
+
+//If you see a big block of commented text you want to uncomment, highlight the text and then hit ctrl-shift-k in Notepad++ and that should uncomment it. Mostly this is intended for advanced users.
+
+
+/*This file has...
+
+OpenSakuraMenu
+MenuRun
+OnLastTalk
+GetWeekDay
+GetAP
+nowmin
+nowhour
+Select.BACKTOMENU
+Delete on/off
+Test variable
+*/
+
+
+//--OpenSakuraMenu
+
+OpenSakuraMenu
+{
+		"\0\s[2]\b2How can I help you, %(username)?"
+		"\0\s[2]\b2I am at your service, %(username)."
+		--
+		MenuRun
+}
+
+//--MenuRun
+//As you just saw above. This actually fills out the rest of the menu.
+
+MenuRun : all
+ {	
+ 	wd = GetWeekDay
+ 	ap = GetAP
+	//It's putting together the information to display the time at the bottom of the balloon.
+	--
+	"\n\n\_q\b2" // \_q means quick session, meaning all the text from this point on will display instantly instead of a few letters at a time like normal ghost dialogue.
+	--
+ 	"\![*]\q[Say something,OnAiTalk]\n"
+	"\![*]\q[Small talk,OnStartSmallTalk]\n"
+	"\![*]\q[Functions,dosomething]\n\n[half]"
+	"\![*]\q[Ghost Controls,configmenu]\n"
+	"\![*]\q[Misc Controls,ghostmenu]\n\n[half]"
+ 	"\![*]\q[Nevermind,CANCEL]\n\n\n[half]%(wd) %(nowhour):%(nowmin) %(ap), %(month)/%(day)/%(year)\e"
+}
+
+//Leave this alone
+OnLastTalk 
+{
+	"%(lastTalk)\e"
+}
+
+//This is figuring out what day of the week it is. Leave it alone.
+GetWeekDay
+{
+	if weekday == 0
+	{"Sun"}
+	elseif weekday == 1
+	{"Mon"}
+	elseif weekday == 2
+	{"Tue"}
+	elseif weekday == 3
+	{"Wed"}
+	elseif weekday == 4
+	{"Thu"}
+	elseif weekday == 5
+	{"Fri"}
+	else
+	{"Sat"}
+}
+
+//This is finding out whether it's AM or PM. Leave it alone.
+GetAP
+{
+ 	if hour >= 0 && hour <= 11
+ 		{"AM"}
+ 	else
+ 		{"PM"}
+}
+
+nowhour
+{
+	if hour12 == 0; "1"
+	else; "%(hour12)"
+}
+
+nowmin
+{
+	if minute >= 0 && minute <=9; "0%(minute)"
+	else; "%(minute)"
+}
+
+
+//If someone selects an option linked to BACKTOMENU, it will go back to MenuRun.
+
+Select.BACKTOMENU
+	{
+		MenuRun
+	}
+
+//If someone selects configmenu, this will lead to TalkConfig.
+Select.configmenu
+	{
+		TalkConfig
+	}
+
+
+//--TalkConfig
+//I commented out birthday and pronoun options, you can uncomment them if you want to add them back.
+
+TalkConfig : all
+{
+	"\0\b[2]\_q" 
+	
+	
+	"\f[bold,1]Your name:\f[bold,0]\n%(username) \f[sup,1](\q[Change it?,TEACHNAME])\f[sup,0]\n"
+	
+	"\f[bold,1]Your birthday:\f[bold,0]\n%(bornmonthprint) %(borndayprint) \f[sup,1](\q[Change it?,TEACHBDAY])\f[sup,0]\n"
+	
+	"\n\f[bold,1]Talk Rate:\f[bold,0]\nevery %(talktime) \f[sup,1](\q[Change it,talkinter])\f[sup,0]\n\n"
+	
+	{
+		"\![*]Enable Hour Chime?\n(NOW : %(chime_on))\n\q[ON,chimeon] \q[OFF,chimeoff]\n\n"
+	}
+	
+	{
+		"\![*]Enable Uninstall?\n(NOW : %(deleteshitai))\n\q[ON,deleteon] \q[OFF,deleteoff]\n\n[half]\n"
+	}
+		
+	
+	
+	"\![*]\q[Back to the menu,BACKTOMENU]\e"
+}
+
+
+//These two options toggle whether or not you can delete your ghost. Leave them alone.
+
+Select.deleteon
+{
+	deleteshitai = "ON"
+	TalkConfig
+}
+
+Select.deleteoff
+{
+	deleteshitai = "OFF"
+	TalkConfig
+}
+
+Select.chimeon
+{
+	chime_on = "ON"
+	TalkConfig
+}
+
+Select.chimeoff
+{
+	chime_on = "OFF"
+	TalkConfig
+}
+
+Select.TEACHBDAY
+{	
+	"\0\s[2]What month were you born? \w8Name or number is fine.\![open,inputbox,OnUserBornMonth,-1]\e"
+}
+
+//--OnUserBornMonth
+//This takes the value that the user put into the input box above and evaluates it.
+
+OnUserBornMonth
+{
+	_tempmonth = TOSTR(reference0) //this stores what the user put in as a variable called _tempmonth
+	_tempmonth = TOLOWER(_tempmonth) //changes it to lowercase
+	
+	//this is attaching the right value to the input from the user
+	if _tempmonth == "january" || _tempmonth == "1" {bornmonth = 1; bornmonthprint = "January"}
+	elseif _tempmonth == "february" || _tempmonth == "2" {bornmonth = 2; bornmonthprint = "February"}
+	elseif _tempmonth == "march" || _tempmonth == "3" {bornmonth = 3; bornmonthprint = "March"}
+	elseif _tempmonth == "april" || _tempmonth == "4" {bornmonth = 4; bornmonthprint = "April"}
+	elseif _tempmonth == "may" || _tempmonth == "5" {bornmonth = 5; bornmonthprint = "May"}
+	elseif _tempmonth == "june" || _tempmonth == "6" {bornmonth = 6; bornmonthprint = "June"}
+	elseif _tempmonth == "july" || _tempmonth == "7" {bornmonth = 7; bornmonthprint = "July"}
+	elseif _tempmonth == "august" || _tempmonth == "8" {bornmonth = 8; bornmonthprint = "August"}
+	elseif _tempmonth == "september" || _tempmonth == "9" {bornmonth = 9; bornmonthprint = "September"}
+	elseif _tempmonth == "october" || _tempmonth == "10" {bornmonth = 10; bornmonthprint = "October"}
+	elseif _tempmonth == "november" || _tempmonth == "11" {bornmonth = 11; bornmonthprint = "November"}
+	elseif _tempmonth == "december" || _tempmonth == "12" {bornmonth = 12; bornmonthprint = "December"}
+	
+	else //if the month isn't a valid month, like 32 or something.
+	{
+		"\0\s[0]That's not a valid month. Try again."
+		--
+		"\![open,inputbox,OnUserBornMonth,-1]\![set,balloontimeout,-1]\e"
+	}
+	--
+	//If it's a valid month
+	
+	"\0\s[2]So you were born in %(bornmonthprint).\n\w8What day was it?"
+	--
+	"\![open,inputbox,OnUserBornDay,-1]\![set,balloontimeout,-1]\e"
+}
+
+//This adds an appropriate suffix to the number for the day. No need to mess with this.
+
+Printday
+{
+	if bornday == 1 || bornday == 21 || bornday == 31
+	{	"%(bornday)st"	}
+	elseif bornday == 2 || bornday == 22
+	{	"%(bornday)nd"	}
+	elseif bornday == 3 || bornday == 23
+	{	"%(bornday)rd"	}
+	else
+	{	"%(bornday)th"	}
+}	
+
+//--OnUserBornDay
+//This is much like the above function OnUserBornMonth. It'll take the value the user put in for the day and analyze it.
+
+OnUserBornDay
+{
+	_tempday = reference0 //storing the input in _tempday
+	_tempday = TOLOWER(_tempday) //changes it to lowercase
+	_tempday = REPLACE(_tempday,"st","") //if the user types something like 2nd, 3rd, etc, this will make it just the number. It'll just add the suffix back later on the one that actually shows.
+	_tempday = REPLACE(_tempday,"nd","")
+	_tempday = REPLACE(_tempday,"rd","")
+	_tempday = REPLACE(_tempday,"th","")
+	_tempday = TOINT(_tempday) //Converts it to an integer
+	
+	if ((bornmonth == 1 || bornmonth == 3 || bornmonth == 5 || bornmonth == 7 || bornmonth == 8 || bornmonth == 10 || bornmonth == 12) && _tempday >= 1 && _tempday <= 31) || (bornmonth == 2 && _tempday >= 1 && _tempday <= 29) || ((bornmonth == 4 || bornmonth == 6 || bornmonth == 9 || bornmonth == 11) && _tempday >= 1 && _tempday <= 30) //This ugly function checks if the day falls into a valid range. If it does, we set some variables and continue down.
+	{
+		bornday = _tempday
+		borndayprint = Printday
+		userbirthday = "%(bornmonth)month %(bornday)day"
+		birthdayprint = "%(bornmonthprint) %(borndayprint)"
+		
+		"%(birthchecked)"
+	}
+	else
+	{
+		"\0\s[0]That's not a valid day. Try again."
+		--
+		"\![open,inputbox,OnUserBornDay,-1]\e"
+	}	
+}
+
+//--birthchecked
+
+birthchecked
+{
+	if userbirthday == dayslot //if today is the user's birthday
+		{
+			"\0\s[0]Happy birthday, %(username)\e"
+			
+		}
+	else //if the birthday is not listed above.
+		{
+			"\0\s[2]I've recorded your birthday as %(bornmonthprint) %(borndayprint).\e"
+		}
+}
+
+
+Select.talkinter : all
+ 	{
+ 		"\0\s[0]\b2How often should I speak?\w8\nThe interval is currently set to %(talktime)."
+		
+ 		"\0\n\n[half]"
+ 		"\![*]\q[Every 30 seconds,TALKMAX]\n"
+		"\![*]\q[Every minute,TALKHIGH]\n"
+ 		"\![*]\q[Every 3 minutes,TALKNORMAL]\n"
+		"\![*]\q[Every 5 minutes,TALKPOOR]\n"
+ 		"\![*]\q[Don't speak,TALKNONE]\n\n[half]"
+		"\![*]\q[Don't change,TalksTill]\e"
+	}
+
+
+Select.TalksTill
+	{
+		"\0\s[2]No change to the talk rate.\e"
+	}
+
+//If the user chooses every 30 seconds.
+Select.TALKMAX
+	{
+ 		talktime = "30 seconds" //this sets up the envelope properly
+		aitalkinterval = 30 //this changes the actual rate
+		
+ 		"\0\s[2]I will speak every 30 seconds.\e"
+	}
+
+//If the user chooses every minute.
+Select.TALKHIGH
+	{
+ 		talktime = "minute"
+		aitalkinterval = 60
+		
+ 		"\0\s[2]I will speak every minute.\e"
+	}
+
+//If the user chooses every three minutes.
+Select.TALKNORMAL
+	{
+ 		talktime = "3 minutes"
+		aitalkinterval = 180
+		
+ 		"\0\s[2]I will speak every three minutes.\e"
+	}
+
+//If the user chooses every five minutes. This is the default rate the ghost will start up in, as seen in bootend.dic.
+Select.TALKPOOR
+	{
+ 		talktime = "5 minutes"
+		aitalkinterval = 300
+		
+ 		"\0\s[2]I will speak every five minutes.\e"
+	}
+
+//If the user chooses to not have them speak.
+Select.TALKNONE
+	{
+ 		talktime = "...actually I won't talk at all"
+		aitalkinterval = 0
+		
+		"\0\s[2]I will not speak.\e"
+	}
+
+
+
+//This is when the user chooses to change their name. It's linked to the functions outlined in nameteach.dic.
+Select.TEACHNAME
+{
+	OnTeachName	
+}
+
+
+//If the user selects cancel in a menu.
+Select.CANCEL
+{
+	"\0\s[0]As you wish, %(username).\e"
+}
+
+
+FunctionMenuIntros : nonoverlap
+{			
+		"\0\s[2]\b2Please assign me a task from the list.\n\n"
+ 		"\0\s[2]\b2I can do anything listed below.\n\n"
+		"\0\s[2]\b2Allow me to assist you with these tasks.\n\n"	
+}
+
+Select.dosomething : all
+{
+ 		FunctionMenuIntros	
+		
+		--
+		
+ 		"\![*]\q[Open Calendar,CALENDAR]\n"
+		"\![*]\q[Check Email,MailCheck]\n"
+		"\![*]\q[Open SSP Preferences,sspconfig]\n"		
+		"\![*]\q[Empty Recycle Bin,ChoiceGarbagecan]\n\n"		
+ 		"\![*]\q[Back to main menu,BACKTOMENU]\e"
+}
+
+//When the user clicks Open Calender.
+Select.CALENDAR
+{
+	"\0\s[2]Opening the calender.\w8\![open,calendar]\e"
+}
+
+//When the user chooses SSP preferences.
+Select.sspconfig
+{
+	"\0\s[2]Opening the SSP config menu.\w8\![open,configurationdialog]\e"
+}
+
+
+//If the user chooses to empty the recycle bin.
+
+Select.ChoiceGarbagecan
+{
+	_gomicheck = FUNCTIONEX("gomi.dll", "-n")	//Don't touch this line. for those curious, it's referencing a SAORI, which are optional user-made plug-in dlls you can download to enable different functions on your ghost.
+	
+	if _gomicheck == 0 //If the recycle bin is empty.
+	{
+		"\0\s[0]Your recycling bin is already empty.\e"
+	}
+	elseif _gomicheck >= 1 //If the recycle bin is full.
+	{
+		"\0\s[0]I shall clean it right now... \![raise,OnGarbagecanEmpty]\w9\w9\w9\cDone.\e"
+		
+		//Somewhat similar to the above, but notice the \![raise],OnGarbagecanEmpty] tag in there. That's what actually empties the recycle bin, so make sure you don't delete that tag.
+	}
+}
+
+
+//This is for the SAORI, don't touch it.
+OnGarbagecanEmpty
+{
+	_gomi = FUNCTIONEX("gomi.dll", "-f")
+}
+	
+//This is when the user chooses to check their email. The rest of this function plays out in etc.dic. You can leave this alone.
+Select.MailCheck
+	{
+		"\![biff]\e"
+	}
+
+
+	
+//---- OnChoiceTimeout ---------------------------------------------------------
+//If the user is given a menu with choices, but doesn't pick one of the choices, it will eventually time out. At that point, they will say this dialogue.
+
+OnChoiceTimeout
+{
+	"\0\s[0]You fell asleep at the keyboard, %(username).\e"
+}
+
+GhostMenuIntros : nonoverlap
+{			
+		"\0\s[2]\b2Please assign me a task from the list.\n\n"
+ 		"\0\s[2]\b2I can do anything listed below.\n\n"
+		"\0\s[2]\b2Allow me to assist you with these tasks.\n\n"	
+}
+
+Select.ghostmenu : all
+{
+ 		GhostMenuIntros	
+		
+		--
+		
+ 		"\![*]\q[Update,keroupdatecheck]\n"
+		"\![*]\q[Bug report,bugreport]\n\n"
+	
+		"\![*]\q[Nothing,keroCANCEL]\e"
+}
+
+//If you click cancel. Replace dialogue as you want.
+Select.keroCANCEL
+{
+	"\0\s[0]As you wish, %(username).\e"
+}
+
+
+//This is when they select bug report.
+Select.bugreport
+{
+	"\0\s[2]Report bugs to \_a[https://mikufanclub.tumblr.com/]Mikufanclub\_a.\e"
+}
+
+//When clicked, this will automatically tell the ghost to check for updates. More detail on updates in etc.dic. 
+Select.keroupdatecheck
+{
+	"\0\s[0]\![updatebymyself]\e"
+}

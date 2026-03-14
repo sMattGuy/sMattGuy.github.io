@@ -1,0 +1,37 @@
+//---------------------------Anchors and OnTranslate--------------------------
+
+//This .dic file is for setting up anchor words, which are links to set conversations attached to certain words automatically. It also deals with OnTranslate, which is a fairly unique function. All text goes through OnTranslate first before it displays on your ghost, which is how it knows to turn certain words into links.
+
+
+//--OnTranslate
+
+//If you're not interested in any anchor words, delete all the lines that start with _talk = REPLACE under OnTranslate.
+
+OnTranslate
+{
+	_talk = reference0	
+	if reference1 == "" && reference2 == "" { //send input box : no event (ref2) , no special flag (ref1)
+		EVAL('"' + REPLACE(_talk,'"','" + CHR(0x22) + "') + '"')
+   }
+   else { //event result from ghost
+		TOSTR(_talk)
+   }
+}
+
+	
+//--OnAnchorSelect
+//OnAnchorSelect runs whenever someone clicks one of the links as specified above, or a link that begins with http://.
+
+OnAnchorSelect
+{
+	if "http://" _in_ reference0 || "https://" _in_ reference0 //checking to see if the link is a web address
+	{
+	"\j[%(reference0)]\e" // \j is a tag that will open a specified url in the user's browser of choice.
+	}
+}
+
+//This bit of code is what makes menu options that don't start with On direct to Select.options instead.
+OnChoiceSelect
+{
+	EVAL("Select.%(reference0)")
+}

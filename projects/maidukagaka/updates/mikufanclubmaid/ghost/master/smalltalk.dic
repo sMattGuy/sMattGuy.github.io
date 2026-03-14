@@ -1,0 +1,189 @@
+// smalltalk
+
+OnStartSmallTalk
+{
+	"\b2"
+	--
+	"\0\s[0]Oh%(SlowDots) small talk?\w8 Sure we can chat a bit%(SlowDots)\n\n[half]\w8"
+	"\0\s[0]\f[height,7]Okay, from now on I'll talk small%(SlowDots)\f[height,11]\s[6] Just kidding! Let's chat!\n\n[half]\w8"
+	"\0\s[0]We can talk for a bit, \s[3]I don't mind%(SlowDots)\n\n[half]\w8"
+	--
+	"%(RandomTopic)"
+}
+
+RandomTopic
+{
+	_random_pick = RAND(4)
+	case _random_pick
+	{
+		when 0
+		{
+			// feeling
+			"\s[0]How are you feeling today?\n\n[half]"
+			"\s[0]Are you doing well today?\n\n[half]"
+			"\s[0]How are your emotions today?\n\n[half]"
+			--
+			FeelingMenu
+		}
+		when 1
+		{
+			// weather
+			"\s[0]How's the weather by you?\n\n[half]"
+			"\s[0]Is the weather nice where you are?\n\n[half]"
+			"\s[0]How's the temperature today?\n\n[half]"
+			--
+			WeatherMenu
+		}
+		when 2
+		{
+			// room clean
+			"\s[0]Is your room clean?\w4 Be honest.\n\n[half]"
+			"\s[0]Have you cleaned your room lately?\n\n[half]"
+			"\s[0]You don't have a dirty room,\w2 do you?\n\n[half]"
+			--
+			RoomCleanMenu
+		}
+		when 3
+		{
+			// tea
+			"\s[0]Which type of tea do your prefer?\n\n[half]"
+			"\s[0]I have some teas you could try.\w4 What's your favorite?\n\n[half]"
+			"\s[0]Would you care for some tea?\w4 What would you like?\n\n[half]"
+			"\s[0]We have an assortment of tea here,\w2 what's your favorite?\n\n[half]"
+			--
+			TeaMenu
+		}
+		others
+		{
+			"\s[0]Actually I don't have anything to talk about%(SlowDots)\s[3] Sorry!\e"
+		}
+	}
+}
+
+FeelingMenu : all
+{
+	"\_q"
+	--
+	"\![*]\q[Happy,FeelingHappy]\n"
+	"\![*]\q[Normal,FeelingNormal]\n"
+	"\![*]\q[Bad,FeelingBad]\n\n[half]"
+	"\![*]\q[Nevermind,CANCEL]\e"
+}
+Select.FeelingHappy
+{
+	"\0\s[6]That's great!\w8 I'm glad you're feeling happy!\e"
+	"\0\s[6]I'm happy too!\w8 I'm glad we can be happy together!\e"
+	"\0\s[6]That's wonderful!\w8 I hope this happiness lasts forever!\e"
+	"\0\s[6]I'm glad to hear that!\e"
+	"\0\s[6]Thank goodness!\w8 I hope it stays that way!\e"
+}
+Select.FeelingNormal
+{
+	"\0\s[0]Sometimes feeling normal is the best.\e"
+	"\0\s[0]Most days will be normal,\w4 so its not too bad.\e"
+	"\0\s[0]Better to be normal than bad,\w4 I always say.\e"
+	"\0\s[0]Normal,\w4 average,\w4 it's all better than nothing.\e"
+}
+Select.FeelingBad
+{
+	"\0\s[3]Oh%(SlowDots) I'm sorry to hear that, %(username).\w8\s[0] I will do my best to cheer you up.\e"
+	"\0\s[3]I will do whatever I can to help you, %(username).\e"
+	"\0\s[3]Don't worry, %(username),\w4 better days will come.\e"
+	"\0\s[3]As someone once said;\w8\s[0] Remember that bad times,\w8 are just times,\w8 that are bad.\e"
+}
+
+WeatherMenu : all
+{
+	"\_q"
+	--
+	"\![*]\q[Perfect weather,WeatherPerfect]\n"
+	"\![*]\q[Normal weather,WeatherNormal]\n"
+	"\![*]\q[Bad weather,WeatherBad]\n\n[half]"
+	"\![*]\q[Nevermind,CANCEL]\e"
+}
+Select.WeatherPerfect
+{
+	"\0\s[6]I do love a perfect day!\w8 You should go out and enjoy it!\e"
+	"\0\s[6]Nothing like a beautiful day!\e"
+	"\0\s[6]That's wonderful!\w8 Let's go out and enjoy it!\e"
+	"\0\s[6]What are you doing on the PC then?\w8 Go out and soak it in!\e"
+}
+Select.WeatherNormal
+{
+	"\0\s[0]I suppose that's better than bad weather,\w4 at least.\e"
+	"\0\s[0]Better normal than crazy.\e"
+	"\0\s[0]If you don't have to go out, no harm in staying home.\e"
+	"\0\s[0]Better get your boring stuff done before it gets bad.\e"
+}
+Select.WeatherBad
+{
+	"\0\s[0]Make sure you stay inside then%(SlowDots) \s[3]And spend the day with me%(SlowDots)\e"
+	"\0\s[0]Better stay in then,\w4 I wouldn't want you getting struck by lightning.\e"
+	"\0\s[0]I'll put some tea on,\w4 rain sounds and tea will make it into perfect weather.\e"
+}
+
+RoomCleanMenu : all
+{
+	"\_q"
+	--
+	"\![*]\q[My room is clean,RoomClean]\n"
+	"\![*]\q[My room is alright,RoomNorm]\n"
+	"\![*]\q[My room is dirty,RoomBad]\n\n[half]"
+	"\![*]\q[Nevermind,CANCEL]\e"
+}
+Select.RoomClean
+{
+	"\0\s[6]That's very maidly of you!\w8\w8\s[0] Don't keep it too clean though%(SlowDots)\s[3] Otherwise you wont need me anymore%(SlowDots).\e"
+	"\0\s[0]Good.\e"
+	"\0\s[0]A clean room is a clean mind, as someone said%(SlowDots) I think.\e"
+	"\0\s[0]I'm very proud of you, %(username).\e"
+}
+Select.RoomNorm
+{
+	"\0\s[0]Perhaps some light cleaning is in order%(SlowDots)\s[6] I'll start with your computer!\e"
+	"\0\s[0]You could take the time to touch up some areas.\w8 Perhaps a little dusting.\e"
+	"\0\s[0]Better than it being dirty.\e"
+	"\0\s[0]Well I'm sure you'll clean it soon%(SlowDots) Right?\e"
+}
+Select.RoomBad
+{
+	"\0\s[0]It's good I'm here then%(SlowDots) Well at least for your PC%(SlowDots)\e"
+	"\0\s[0]Why not go and clean it?\w8 Even just a little.\e"
+	"\0\s[1]Well that's no good.\w8 Go and clean it!\e"
+	"\0\s[4]Telling a maid your room is dirty%(SlowDots) Have you no shame?\e"
+}
+
+TeaMenu : all
+{
+	"\_q"
+	--
+	"\![*]\q[Green tea,TeaGreen]\n"
+	"\![*]\q[Black tea,TeaBlack]\n"
+	"\![*]\q[Herbal Tea,TeaHerbal]\n"
+	"\![*]\q[Coffee,TeaCoffee]\n\n[half]"
+	"\![*]\q[Nevermind,CANCEL]\e"
+}
+Select.TeaGreen
+{
+	"\0\s[0]We have plenty of green tea for you to try.\w4 I'll start some right away.\e"
+	"\0\s[6]Green tea has antioxidants,\w4 which are good for you!\e"
+	"\0\s[0]I have plenty of green tea available,\w4 or would you enjoy some matcha?\e"
+}
+Select.TeaBlack
+{
+	"\0\s[0]Did you know that black tea is referred to as red tea in some places?\e"
+	"\0\s[0]I always enjoy a cup of black tea in the morning.\e"
+	"\0\s[0]They say black tea is good for your mind%(SlowDots) Who said that you ask?\w8\w8\w8\s[1] Why be so nosey?\e"
+}
+Select.TeaHerbal
+{
+	"\0\s[6]I do enjoy a good cup of chamomile before bed.\e"
+	"\0\s[0]I always have herbal tea when I feel sick,\w4\s[6] it helps me get better faster!\e"
+	"\0\s[0]There are so many teas out there%(SlowDots)\s[6] We can try them all!\e"
+}
+Select.TeaCoffee
+{
+	"\0\s[0]Not a tea drinker,\w2 huh%(SlowDots) Well fortunately we have plenty of coffee as well.\e"
+	"\0\s[0]Coffee?\w8\w8\ Well we have some if you want.\e"
+	"\0\s[0]How do you like your coffee?\w8 We have everything needed to make it any way you like.\e"
+}

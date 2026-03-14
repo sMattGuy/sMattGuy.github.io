@@ -1,0 +1,1 @@
+This is the balloon meant to be used with Mikufanclub's Maid Ukagaka. It is a simple doily.

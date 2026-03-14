@@ -1,0 +1,133 @@
+﻿//---------------------------AI Talk--------------------------
+//Leave this alone. This is mostly setting up whether or not dialogue is in a chain before it displays.
+
+OnAiTalk
+{
+	if RAND(100) < communicateratio
+ 	{
+ 		StartCommunicate
+	}
+ 	else
+	{
+			if CHAIN.IDName == "" {
+ 				lastTalk = RandomTalk
+			}
+			else {
+				lastTalk = ChainTalk
+			}
+			lastTalk
+	}
+}
+ 
+//--RandomTalk 
+RandomTalk : nonoverlap_pool
+{
+	"\0\s[0]I should sweep the dishes\w4.\w4.\w4.\e"
+	
+	"\0\s[0]Sweep sweep sweep...\e"
+	
+	"\0\s[0]I've finished sweeping those dishes, %(username)%(SlowDots)\w8 You're welcome.\e"
+	
+	"\0\s[0]I'm only two dishes tall...\e"
+	
+	"\0\s[1]Who broke all the plates?\w8\w8\n\n\s[0]Oh%(SlowDots)\w8\w2 It might have been me... \w8\s[3]bweeee~~\e"
+	
+	"\0\s[0]I've finished dusting your PC\w[500].\w[40].\w[40]. Oh I missed a spot.\s[4]\w[1000]\n\n[half]Sweep sweep sweep.\e"
+	
+	"\0\s[6]I found my long lost duster!\w8 I'm so happy!!!.\e"
+	
+	"\0\s[0]So.\w8.\w8.\w8 about receiving my paycheck%(SlowDots)\w8.\e"
+	
+	"\0\s[0]I've finished organizing your files%(SlowDots) Don't worry\w8\s[3] I won't tell anyone what I saw...\e"
+	
+	"\0\s[6]I saw a bunch of cute dust bunnies while sweeping!!!\w8\w8\s[0]\w8\w8 Needless to say they are no longer with us%(SlowDots)\e"
+	
+	"\0\s[0]My job isn't easy%(SlowDots) Not everyone is \w8\f[italic,1]maid\f[italic,0]\w8\s[6] for the task!\e"
+	
+	"\0\s[6]Nothing beats a sunny day and a cup of tea!\w8\s[3]\w4 There's plenty of tea if you'd like some too, %(username)...\e"
+	
+	"\0\s[2]%(SlowDots)\n%(SlowDots)\n%(SlowDots)\n\w8\w8\s[0]Oh!\w8 Sorry %(username) I was just%(SlowDots) uhm%(SlowDots)\s[3] Checking Tumblr%(SlowDots)\e"
+	
+	"\0\s[0]On my off days I like to go down by \_a[https://www.lexaloffle.com/bbs/?pid=maid2fish]the lake and fish\_a.\w4\s[6] Feel free to join me anytime!\e"
+	
+	"\0\s[1]Who said maids cant have hobbies!\w8 Fishing is an important part of any maids life!\e"
+	
+	"\0\s[0]I could do a kick flip if you want.\e"
+	
+	"\0\s[0]So, %(username).\w4 I assume you've played \_a[https://www.lexaloffle.com/bbs/?pid=maid2fish]Maid 2 Fish\_a, right?\w4 Well you should.\e"
+	
+	"\0\s[0]Let's see%(SlowDots) I've dusted everything,\w4 Swept the floors,\w4 and polished the PC%(SlowDots) what else could be cleaned.\e"
+	
+	"\0\s[4]Don't mind me%(SlowDots) This one spot is just taking way longer to dust%(SlowDots)\e"
+	
+	"\0\s[0]Just so you know%(SlowDots) You can rub my head to pet it%(SlowDots)\s[3] If you think I've earned it%(SlowDots)\e"
+	
+	"\0\s[0]Whatever you do,\w4\s[1] DO NOT DOUBLE CLICK MY HEAD!\w8\w8\s[0] Thanks.\e"
+	
+	"\0\s[0]Just so you know,\w4 double clicking me will show you a useful menu.\w8 Just don't poke my head.\e"
+}
+
+OnHourTimeSignal
+{
+	"\0\s[0]"
+	--
+	if chime_on == "ON"
+	{
+		"\![sound,play,chime.mp3,volume=100]"
+	}
+	--
+	"It is now %(nowhour):%(nowmin) %(ap), %(username).\e"
+}
+
+//Keeps track of if an hour has passed. Just ignore this.
+HourCheck
+{
+if passmin >= 59
+	{
+		passmin = 0
+		passhour = passhour + 1
+	}
+}
+
+OnMinuteChange //This is what will trigger time-based dialogue for your Ghost.
+ {
+	HourCheck //checks to see if an hour has passed, ignore it
+	--
+ }
+
+//--OnSecondChange
+//Like the above, this handles what happens every time a second goes by. Most of this you will not have to touch.
+
+OnSecondChange
+{
+	if passsec == 59
+ 	{
+	 	passsec = 0
+ 		passmin = passmin + 1
+	}
+ 	else
+ 	{
+	 	passsec = passsec + 1
+	}
+}
+
+OnSurfaceRestore
+{
+	"\0\s[0]\1\s[10]\e"
+}
+
+OnKeyPress
+{
+	if reference0 == "t"
+	{
+	OnAiTalk
+	}
+	elseif reference0 == "r"
+	{
+	OnLastTalk
+	}
+	elseif reference0 == "f1"
+	{
+	"\![open,readme]"
+	}
+}

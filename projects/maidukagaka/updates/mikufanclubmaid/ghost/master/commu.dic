@@ -1,0 +1,53 @@
+//---------------------------Communication--------------------------
+
+//Some ghosts have a feature where they will speak to your ghost, usually saying "hello" or "hi" or something like that. This file mostly handles how your ghost will reply when another ghost talks to them like that. While not every ghost has that functionality, you might as well put in one line or two just in case.
+
+//If you're interested in having your ghost speak to other ghosts through a menu option or something like that, I think that's a bit outside the scope of this template for now, but I'm sure I'll eventually write up how to do it on the walkthrough page in one of the coding sections.
+
+
+//--OnCommunicate
+
+//OnCommunicate is called when your ghost is either targeted by another ghost for a conversation, or when your ghost is targeting another ghost for conversation.
+OnCommunicate
+ {
+	if reference0 == "user" || reference0 == "User"
+ 	{
+		//---- answering the user
+ 		ReplyToUser
+	}
+ 	else
+	{
+ 		//---- answering another ghost
+		ReplyToGhost
+ 	}
+}
+
+//Just ignore this.
+ReplyToUser
+{
+	TalkToUser
+}
+
+ReplyToGhost
+{
+       if AlreadyResponded == 1 //checking the status of the flag
+       {		
+             AlreadyResponded = 0 //Resetting the flag.
+
+             res_reference0 = "" //this will clear the value so the conversation will end
+
+             "..."
+       }
+       else
+       {
+		   //if you don't want your ghost to say anything, just comment out everything here
+		   
+             res_reference0 = reference0 //targeting the other ghost.
+			 
+             AlreadyResponded = 1 //setting a flag to say they've responded once already
+
+             {
+             "\0\s[0]Sorry, %(res_reference0). I only speak with %(username).\e"
+             }
+       }
+}

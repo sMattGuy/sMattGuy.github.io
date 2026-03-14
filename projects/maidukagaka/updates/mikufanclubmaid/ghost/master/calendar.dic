@@ -1,0 +1,34 @@
+//calendar functions
+ScheduleWords
+{
+	if SUBSTR(_argv[0],0,1) == "a" || SUBSTR(_argv[0],0,1) == "e"
+	{
+		"an %(_argv[0])"
+	}
+	else
+	{
+		"a %(_argv[0])"
+	}
+}
+
+ScheduleSubData
+{
+	if _argv[0] == ""
+	{
+		""
+	}
+	else
+	{
+		"\n\n[half]Here is some more information about your %(_argv[1]): %(_argv[0])"
+	}
+}
+
+OnSchedule5MinutesToGo
+{
+	"\0\s[0]You have %(ScheduleWords(reference0)) for %(reference1) coming up in 5 minutes.\w8\w8 %(ScheduleSubData(reference2,reference0))\e"
+}
+
+OnScheduleRead
+{
+	"\0\s[0]This is %(ScheduleWords(reference0)) you have scheduled called \'%(reference1)\'.\w8\w8 %(ScheduleSubData(reference2,reference0))\e"
+}

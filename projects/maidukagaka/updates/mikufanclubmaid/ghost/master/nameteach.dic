@@ -1,0 +1,48 @@
+﻿//---------------------------The User's Name--------------------------
+//This .dic file has to do with setting the user's name and suffix/prefix (optional).
+
+//If you see a big block of commented text you want to uncomment, highlight the text and then hit ctrl-shift-k in Notepad++ and that should uncomment it. Mostly this is intended for advanced users.
+
+
+//--OnTeachName
+//This is called from the config menu in the main character's double click menu when the user says they want to change their name. If you look in menu.dic you'll see the code leading to here.
+
+OnTeachName	
+{
+	if reference0 == "TEACHNAME" //ignore this
+		{
+		"\0\s[0]%(username), you want to change your name?\w2 What do you want it to be?\![open,inputbox,OnNameTeach,-1]\e"
+		}
+	else
+		{
+		}
+}
+
+
+//--OnNameTeach
+//This is where the user inputs their name and the ghost analyzes it.
+
+OnNameTeach
+{
+	tempname = reference0 //this stores the name value from reference0 in tempname
+	
+	
+	reference0 = TOLOWER(reference0) //changes it to lowercase
+	reference0 = REPLACE(reference0," ","") //removes spaces
+	reference0 = REPLACE(reference0,".","") //removes periods
+	reference0 = REPLACE(reference0,"-","") //removes dashes
+	
+	
+	if reference0 == "" //This is if the user doesn't put in a name at all, since that'd also get awkward in dialogue.
+	{
+		username = "Master" //this sets the user's name to USER.
+		
+		"\0\s[0]You didn't say in anything...\w8 I will call you Master.\s[5]\e"
+	}
+	else //if the user put in something not specified above, ie a proper name the ghost can use. 
+	{
+		username = tempname
+		"\0\s[0]I will now call you %(username).\s[5]\e"
+		
+	}
+}

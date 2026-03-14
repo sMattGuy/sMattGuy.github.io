@@ -1,0 +1,19 @@
+surface0 - maid base - 0
+surface1 - angry - 1
+surface10 - unused kero
+surface1001 - talk 1
+surface1002 - talk 2
+surface1003 - blink 1
+surface1004 - blink 2
+surface1005 - arm wiggle
+surface1006 - phone - 2
+surface1007 - blushing - 3
+surface1008 - dusting 1 - 4
+surface1009 - dusting 2 - 4
+surface1010 - bowing 1 - 5
+surface1011 - bowing 2 - 5
+surface1012 - looking
+surface1013 - happy 1 - 
+surface1014 - happy 2 - 
+surface1015 - push glasses 1
+surface1016 - push glasses 2

@@ -1,0 +1,19 @@
+//You don't need to touch this part.
+charset,UTF-8
+version,1
+option,DisableNoDefineSurfaces
+
+//maid
+group,M
+{
+	scope,0
+
+	0,Default
+	1,Angry
+	2,Phone
+	3,Blush
+	4,Dust
+	5,Bow
+	6,Happy
+}
+
