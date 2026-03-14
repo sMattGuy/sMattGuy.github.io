@@ -1,0 +1,14 @@
+1. Copy and paste in ghost folder
+	a. If ghost folder has balloon in it, delete it.
+2. in Ghost/Master delete Profile folder and yaya_variable.cfg
+3. in Shell/Master delete Profile folder
+4. in updates root, drag folder on to open ssp
+5. select Create update file
+-- NETWORK UPDATE SETUP COMPLETE --
+
+! UPDATE NAR NEXT !
+1. copy balloon folder into update folder that was just made
+2. go back to updates folder and drag folder on to open ssp
+3. select create nar and save it to updates folder, overwriting old one
+4. delete balloon folder from the network update folder
+-- NEW NAR COMPLETE --

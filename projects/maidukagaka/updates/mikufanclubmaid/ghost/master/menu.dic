@@ -259,7 +259,15 @@ birthchecked
 		}
 	else //if the birthday is not listed above.
 		{
-			"\0\s[2]I've recorded your birthday as %(bornmonthprint) %(borndayprint).\e"
+			if firstboot == 1  
+			{
+				firstboot = 0
+				"\0\s[2]I've recorded your birthday as %(bornmonthprint) %(borndayprint).\w8\w8\n\n[half]Thank you, %(username).\w4\s[6] I hope we will have a wonderful time together!\w4\n\n(You can click the balloon to close dialog, or wait for it to close on its own. Double click the maid for functions, or right click for SSP menu. Enjoy!)\e"
+			}
+			else
+			{
+				"\0\s[2]I've recorded your birthday as %(bornmonthprint) %(borndayprint).\e"
+			}
 		}
 }
 

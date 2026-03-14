@@ -51,6 +51,7 @@ OnFirstBoot : all
 	talktime = "5 minutes" //How the value aitalkinterval will display in the config menu.
 	deleteshitai = "OFF" //Sets whether or not the user can uninstall the ghost to "OFF". The user can change it later in the config menu (see menu.dic). 
 	nowshell = "master" 
+	firstboot = 1 //used only for ending birthday with more text
 	
 	if reference0 == 0 
  	{
