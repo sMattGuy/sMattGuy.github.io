@@ -18,7 +18,7 @@ file,ghost/master/mouse.dicb81107a5b19ba4dddbc7d680f03be25asize=3207date=2026
 file,ghost/master/nameteach.dic44c23ab9f15777c49bd282778a178637size=1683date=2026-03-08T22:54:54
 file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280date=2004-04-17T20:47:18
 file,ghost/master/smalltalk.dicf3ddde38b91c404992a2a48fc6955e4bsize=6167date=2026-03-13T17:37:09
-file,ghost/master/string.dic6daece244a4efc19aed6e38babb781e2size=7031date=2026-03-13T22:42:36
+file,ghost/master/string.dic4e608bbd28230aac53d28c52ed822967size=7032date=2026-03-13T22:52:32
 file,ghost/master/word.dicd9e9a0bb782672c30e8e737891526dcfsize=328date=2026-03-10T19:33:00
 file,ghost/master/yaya.dll56e3af56c88e696cea1f39d53b239cefsize=880640date=2022-09-10T19:18:59
 file,ghost/master/yaya.txtae885af9da2a4d55ff538c09e53a1336size=1949date=2026-03-10T21:02:48
