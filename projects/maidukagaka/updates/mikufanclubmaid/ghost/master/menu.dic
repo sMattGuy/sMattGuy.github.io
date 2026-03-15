@@ -42,6 +42,7 @@ MenuRun : all
 	--
  	"\![*]\q[Say something,OnAiTalk]\n"
 	"\![*]\q[Small talk,OnStartSmallTalk]\n"
+	"\![*]\q[Give Biscuit,OnBiscuit]\n"
 	"\![*]\q[Functions,dosomething]\n\n[half]"
 	"\![*]\q[Ghost Controls,configmenu]\n"
 	"\![*]\q[Misc Controls,ghostmenu]\n\n[half]"
@@ -52,6 +53,22 @@ MenuRun : all
 OnLastTalk 
 {
 	"%(lastTalk)\e"
+}
+
+OnBiscuit
+{
+	"\0\s[0]A biscuit?\w4 For me?\w8\s[6] Thank you %(username)!\w8\s[7]%(BiteCount)\w8\s[6]\w8\w8\w8\n\n[half]That was delicious!\e"
+}
+
+BiteCount
+{
+	_bites = RAND(3)+2
+	_bite_text = ""
+	for _i=0; _i<_bites; _i++
+	{
+		_bite_text += "\i[0,wait]\w4"
+	}
+	_bite_text
 }
 
 //This is figuring out what day of the week it is. Leave it alone.

@@ -185,6 +185,17 @@ surface6
 	1pattern0,1014,25,replace,0,0
 	1pattern1,-1,25,replace,0,0
 }
+
+surface7
+{
+	//happy
+	element0,overlay,surface1018.png,0,0
+	
+	//talking
+	0interval,talk,4
+	0pattern0,1017,10,overlay,0,0
+	0pattern1,-1,10,overlay,0,0
+}
 //--The Side Character's poses------------------
 
 surface10

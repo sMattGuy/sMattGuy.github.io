@@ -52,7 +52,7 @@ RandomTalk : nonoverlap_pool
 	
 	"\0\s[0]On my off days I like to go down by \_a[https://www.lexaloffle.com/bbs/?pid=maid2fish]the lake and fish\_a.\w4\s[6] Feel free to join me anytime!\e"
 	
-	"\0\s[1]Who said maids cant have hobbies!\w8 Fishing is an important part of any maids life!\e"
+	"\0\s[1]Who said maids can't have hobbies!\w8 Fishing is an important part of any maids life!\e"
 	
 	"\0\s[0]I could do a kick flip if you want.\e"
 	
@@ -67,6 +67,7 @@ RandomTalk : nonoverlap_pool
 	"\0\s[0]Whatever you do,\w4\s[1] DO NOT DOUBLE CLICK MY HEAD!\w8\w8\s[0] Thanks.\e"
 	
 	"\0\s[0]Just so you know,\w4 double clicking me will show you a useful menu.\w8 Just don't poke my head.\e"
+	
 }
 
 OnHourTimeSignal
@@ -115,7 +116,7 @@ OnSecondChange
 
 OnSurfaceRestore
 {
-	"\0\s[0]\1\s[10]\e"
+	"\0\s[0]\e"
 }
 
 OnKeyPress

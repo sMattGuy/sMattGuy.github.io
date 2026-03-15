@@ -15,5 +15,6 @@ group,M
 	4,Dust
 	5,Bow
 	6,Happy
+	7,Cookie
 }
 

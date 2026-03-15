@@ -2,7 +2,7 @@ charset,OSNative
 file,install.txt59a295afc3706612dad0ee69f59fba91size=931date=2026-03-11T20:08:28
 file,readme.txt9debc2f365e333af4603a824c651b276size=418date=2026-03-11T20:12:31
 file,thumbnail.png9e4dad6c46df940f02abe99c63b4e181size=56463date=2026-03-10T20:13:11
-file,ghost/master/aitalk.dic3aa84458d858c525ca760647144f9689size=3767date=2026-03-13T23:55:45
+file,ghost/master/aitalk.dicd2ee369a737a752e19f2604a50343bcesize=3763date=2026-03-14T23:52:00
 file,ghost/master/anchor.diccd4d4732d1d0858e0280e47acf93de1fsize=1370date=2026-03-07T01:09:51
 file,ghost/master/bootend.diccc572ae332cd5d063d4589f68a9e9485size=7551date=2026-03-13T23:36:37
 file,ghost/master/calendar.dic231b149be7e510e488e54c6adfb1193csize=662date=2026-03-09T18:38:14
@@ -13,11 +13,11 @@ file,ghost/master/etc.dic983b166a3733ed9256e2cf28e10e65d3size=24037date=2026-
 file,ghost/master/gomi.dll51fe9597398db01e684a0f9d52c63242size=13312date=2004-06-01T21:00:04
 file,ghost/master/gt_template.icoe9c300751ce451af0dfb24d2d1e73dbbsize=4286date=2026-03-10T20:19:27
 file,ghost/master/mciaudior.dllb1082bccd2aac2017f7936baf2d967b3size=29696date=2003-03-13T17:23:26
-file,ghost/master/menu.dica1641d975358645222658d7f483b312fsize=12660date=2026-03-14T00:04:01
+file,ghost/master/menu.dic31de9b6e2aeb37d72b3a9deaa0f5efafsize=12989date=2026-03-15T00:27:53
 file,ghost/master/mouse.dicb81107a5b19ba4dddbc7d680f03be25asize=3207date=2026-03-08T22:16:11
 file,ghost/master/nameteach.dic44c23ab9f15777c49bd282778a178637size=1683date=2026-03-08T22:54:54
 file,ghost/master/saori_cpuid.dlld13370aee8e579fe2517d789dba7c45esize=225280date=2004-04-17T20:47:18
-file,ghost/master/smalltalk.dicf3ddde38b91c404992a2a48fc6955e4bsize=6167date=2026-03-13T17:37:09
+file,ghost/master/smalltalk.diccdd4be87e2a3493f328ed08a0b728a3asize=6170date=2026-03-14T14:44:52
 file,ghost/master/string.dic4e608bbd28230aac53d28c52ed822967size=7032date=2026-03-13T22:52:32
 file,ghost/master/word.dicd9e9a0bb782672c30e8e737891526dcfsize=328date=2026-03-10T19:33:00
 file,ghost/master/yaya.dll56e3af56c88e696cea1f39d53b239cefsize=880640date=2022-09-10T19:18:59
@@ -51,7 +51,9 @@ file,shell/master/surface1014.pngd4458c54c7b6a8cc8e07ee9b37d1bc7asize=125413d
 file,shell/master/surface1015.png10a005bef3ea79385eba8968289b917esize=127351date=2026-03-09T21:22:52
 file,shell/master/surface1016.png75f861dea074e23923afaf2c50052fa0size=127470date=2026-03-09T21:33:27
 file,shell/master/surface1017.png5ffe9a047e5bb261b6d1d2879aa1c610size=2037date=2026-03-09T21:38:00
+file,shell/master/surface1018.pngf8073a3c2d90d84652efa21b5c1a7d29size=127597date=2026-03-14T23:50:03
+file,shell/master/surface1019.png634dbce066b2c12fe514451a12f24159size=127640date=2026-03-15T00:17:48
 file,shell/master/surfacedescriptions.txt9a6c76ee7dd50e7db94fdc313bc5289dsize=489date=2026-03-09T21:35:08
-file,shell/master/surfaces.txtf8cb5e41f5f1018b2df93b43a8af873esize=4453date=2026-03-09T21:46:03
-file,shell/master/surfacetable.txt257a6ad533b4c103a566c0115aa0af58size=204date=2026-03-09T21:33:37
+file,shell/master/surfaces.txtb9f465547069dfb2cfaacc0b13eca8c5size=4616date=2026-03-14T23:51:17
+file,shell/master/surfacetable.txt70369ec928a81bded24d5e1e8ff26b59size=215date=2026-03-14T23:51:28
 file,shell/master/thumbnail.pngd60975cf77bbaaba3369e38bfecdfd55size=3600382date=2026-03-10T20:06:44

@@ -5,7 +5,7 @@ OnStartSmallTalk
 	"\b2"
 	--
 	"\0\s[0]Oh%(SlowDots) small talk?\w8 Sure we can chat a bit%(SlowDots)\n\n[half]\w8"
-	"\0\s[0]\f[height,7]Okay, from now on I'll talk small%(SlowDots)\f[height,11]\s[6] Just kidding! Let's chat!\n\n[half]\w8"
+	"\0\s[0]\f[height,7]Okay, from now on I'll talk small%(SlowDots)\f[height,11]\s[6] Just kidding!\w4 Let's chat!\n\n[half]\w8"
 	"\0\s[0]We can talk for a bit, \s[3]I don't mind%(SlowDots)\n\n[half]\w8"
 	--
 	"%(RandomTopic)"
